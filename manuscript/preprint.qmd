@@ -72,6 +72,7 @@ significance: |
 bibliography: references.bib
 funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
 license: CC BY-SA
+declaration: The authors declare no competing interests.
 ---
 
 # Introduction

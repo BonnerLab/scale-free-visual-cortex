@@ -8,6 +8,7 @@ author:
     email: rgautha1@jh.edu
     orcid: 0000-0001-7121-1532
     roles: ["conceptualization", "data curation", "analysis", "investigation", "methodology", "software", "visualization", "writing", "editing"]
+    corresponding: true
     affiliation:
       - ref: a
   - name:
@@ -17,6 +18,7 @@ author:
     email: menard@jh.edu
     orcid: 0000-0003-3164-6974
     roles: ["conceptualization", "funding", "methodology", "project administration", "supervision", "writing", "editing"]
+    corresponding: true
     affiliation:
       - ref: b
       - ref: a
@@ -24,11 +26,12 @@ author:
   - name:
       given: Michael
       family: Bonner
-      non-dropping-particle: F.
+      dropping-particle: F.
     id: MFB
     email: mfbonner@jh.edu
     orcid: 0000-0002-4992-674X
     roles: ["conceptualization", "funding", "methodology", "project administration", "supervision", "writing", "editing"]
+    corresponding: true
     affiliation:
     - ref: a
 affiliations:
@@ -40,6 +43,8 @@ affiliations:
     country: US
     postal-code: 21218
     url: https://cogsci.jhu.edu
+    ror: https://ror.org/00za53h95
+    isni: 0000000121719311
   - id: b
     name: Johns Hopkins University
     department: Department of Physics & Astronomy
@@ -48,6 +53,8 @@ affiliations:
     country: US
     postal-code: 21218
     url: https://physics-astronomy.jhu.edu/
+    ror: https://ror.org/00za53h95
+    isni: 0000000121719311
   - id: c
     name: Santa Fe Institute
     city: Santa Fe
@@ -55,14 +62,16 @@ affiliations:
     country: US
     postal-code: 87501
     url: https://www.santafe.edu/
-
+    ror: https://ror.org/01arysc35
+    isni: 0000000119411940
 abstract: |
   How does the human visual cortex encode sensory information? To address this question, we explore the covariance structure of neural representations. We perform a cross-decomposition analysis of fMRI responses to natural images in multiple individuals from the Natural Scenes Dataset and find that neural representations systematically exhibit a power-law covariance spectrum over four orders of magnitude in ranks. This scale-free structure is found in multiple regions along the visual hierarchy, pointing to the existence of a generic encoding strategy in visual cortex. We also show that, up to a rotation, a large ensemble of principal axes of these population codes are shared across subjects, showing the existence of a universal high-dimensional representation. This suggests a high level of convergence in how the human brain learns to represent natural scenes despite individual differences in neuroanatomy and experience. We further demonstrate that a spectral approach is critical for characterizing population codes in their full extent, and in doing so, we reveal a vast space of uncharted dimensions that have been out of reach for conventional variance-weighted methods. A global view of neural representations thus requires embracing their high-dimensional nature and understanding them statistically rather than through visual or semantic interpretation of individual dimensions.
 keywords: ["scale-free", "power-law", "universality", "high-dimensional representations", "dimensionality", "visual cortex", "fMRI", "natural scenes"]
 significance: |
   # TODO
 bibliography: references.bib
-funding: This research was supported in part by a JHU IDIES grant to MFB and BM and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics (KITP).
+funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
+license: CC BY-SA
 ---
 
 # Introduction
@@ -301,7 +310,7 @@ All code for these analyses are available at [this git repository](https://githu
 
 # Acknowledgments
 
-This research was supported in part by a JHU Catalyst Award to MFB, JHU IDIES Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics (KITP). The authors would like to thank Leyla Isik, Daeyeol Lee, Nikolaus Kriegeskorte, and Kelsey Han for valuable comments on the manuscript.
+This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics. The authors would like to thank Leyla Isik, Daeyeol Lee, Nikolaus Kriegeskorte, and Kelsey Han for their valuable comments on the manuscript.
 
 {{< pagebreak >}}
 

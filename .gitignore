@@ -1,0 +1,10 @@
+# directories
+logs
+results
+cache
+
+# installation artifacts
+*.egg-info
+
+# cache
+*.pyc

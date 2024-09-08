@@ -1,0 +1,14 @@
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.run.xml
+*.bbl
+*.blg
+*.synctex.gz
+*.out
+!cache
+
+arxiv
+/.quarto/

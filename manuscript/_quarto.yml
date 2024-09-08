@@ -1,0 +1,27 @@
+project:
+  type: manuscript
+  output-dir: arxiv
+  post-render:
+    - clean.sh
+
+manuscript:
+  article: preprint.qmd
+  notebooks:
+    - notebook: notebooks/schematic.ipynb
+      title: Schematic of cross-decomposition procedure
+    - notebook: notebooks/spectra.ipynb
+      title: Scale-free neural covariance spectra
+    - notebook: notebooks/cross_similarity.ipynb
+      title: Quantifying between-subject similarity
+    - notebook: notebooks/singular_vectors.ipynb
+      title: Visualizing latent dimensions on the cortical surface
+    - notebook: notebooks/rsa.ipynb
+      title: Comparison to representational similarity analysis
+  code-links:
+    - repo: https://github.com/BonnerLab/scale-free-visual-cortex
+
+pdf-engine: pdflatex
+format:
+  arxiv-pdf:
+    keep-tex: true
+  # html: default

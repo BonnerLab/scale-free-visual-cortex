@@ -1,0 +1,6 @@
+name: scale-free-visual-cortex
+dependencies:
+  - python==3.12.4
+  - pip
+  - pip:
+    - "-r requirements.txt"

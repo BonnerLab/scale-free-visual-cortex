@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scale-free-visual-cortex"
+description = "Research project investigating the scale-free covariance structure of visual representations in the human brain"
+readme = "README.md"
+requires-python = "==3.12.4"
+license = { file = "LICENSE" }
+authors = [{ name = "Raj Magesh Gauthaman", email = "rgautha1@jh.edu" }]
+keywords = ["Bonner Lab", "scale-free", "covariance structure", "power-law", "universality", "high-dimensional", "dimensionality", "visual cortex", "representations"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed",
+]
+urls = { repository = "https://github.com/BonnerLab/scale-free-visual-cortex" }
+dependencies = [
+    "python-dotenv",
+    "loguru",
+    "more-itertools",
+    "tqdm",
+    "numpy",
+    "torch",
+    "pandas",
+    "xarray",
+    "netCDF4",
+    "dask",
+    "scipy",
+    "scikit-learn",
+    "Pillow",
+    "matplotlib",
+    "seaborn",
+    "nilearn",
+    "skunk",
+    "cairosvg",
+    "notebook",
+    "ipywidgets",
+    "bonner-libraries",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest",
+    "sphinx",
+    "jupytext",
+    "line-profiler",
+    "memory-profiler",
+    "snakeviz",
+]
+
+[tool.mypy]
+namespace_packages = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_return_any = true
+warn_unreachable = true
+
+allow_redefinition = true
+
+[tool.jupytext.formats]
+"notebooks" = "ipynb"
+"scripts" = "py:percent"
+
+[tool.jupytext]
+notebook_metadata_filter = "-all"
+cell_metadata_filter = "-all"
+
+[tool.ruff]
+target-version = "py312"
+preview = true
+extend-include = ["*.ipynb"]
+ignore = ["CPY001", "PD013", "D103", "E302", "PLR0913"]
+
+[tool.ruff.lint]
+select = ["ALL"]

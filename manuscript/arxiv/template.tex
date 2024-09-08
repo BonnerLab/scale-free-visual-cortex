@@ -1,0 +1,50 @@
+\pdfoutput=1
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{arxiv}
+\usepackage{orcidlink}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{{../figures/}{figures/}}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{$bibliography$}
+
+\makeatletter
+\def\fps@figure{H}
+\makeatother
+
+% tightlist command for pandoc (https://github.com/jgm/pandoc-templates/blob/3430359b4c688dbedaa23d76575184191a12c4d9/default.latex#L348)
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% disable pandocbounded commmand
+\newcommand{\pandocbounded}[1]{#1}
+
+\title{Universal scale-free representations\\in human visual cortex}
+
+\author{
+    \textbf{Raj Magesh Gauthaman$$^1$$}~\orcidlink{0000-0001-7121-1532},
+    \textbf{Brice Ménard$$^{2,1,3}$$}~\orcidlink{0000-0003-3164-6974},
+    \textbf{Michael F. Bonner$$^1$$}~\orcidlink{0000-0002-4992-674X}\\
+    $$^1$$Department of Cognitive Science,
+    $$^2$$Department of Physics and Astronomy\\
+    Johns Hopkins University, Baltimore, MD\\
+    $$^3$$Santa Fe Institute, Santa Fe, NM\\
+    \texttt{\{\href{mailto:rgautha1@jh.edu}{rgautha1}, \href{mailto:bmenard1@jh.edu}{bmenard1}, \href{mailto:mfbonner@jh.edu}{mfbonner}\}@jh.edu}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    $abstract$
+\end{abstract}
+
+$body$
+
+\end{document}

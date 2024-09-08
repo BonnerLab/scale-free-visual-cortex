@@ -1,0 +1,155 @@
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[project]
+name = "scale-free-visual-cortex"
+description = "Research project investigating the dimensionality of visual representations in the human brain"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+authors = [{ name = "Raj Magesh Gauthaman", email = "rgautha1@jh.edu" }]
+keywords = [
+    "Bonner Lab",
+    "scale-free",
+    "power-law",
+    "universal",
+    "high-dimensional",
+    "dimensionality",
+    "visual cortex",
+    "representations",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed",
+]
+urls = { repository = "https://github.com/BonnerLab/scale-free-visual-cortex" }
+dependencies = [
+    "python-dotenv",
+    "loguru",
+    "tqdm",
+    "numpy",
+    "torch",
+    "opt-einsum",
+    "torchvision",
+    "jax",
+    "lightning",
+    "tensorboard",
+    "diffusers[torch]",
+    "transformers[torch]",
+    "open_clip_torch",
+    "pandas",
+    "xarray",
+    "netCDF4",
+    "flox",
+    "scipy",
+    "scikit-learn",
+    "scikit-image",
+    "torchdr",
+    "Pillow",
+    "matplotlib",
+    "seaborn",
+    "nilearn",
+    "skunk",
+    "cairosvg",
+    "notebook",
+    "ipympl",
+    "ipywidgets",
+    "bonner-libraries @ git+https://github.com/BonnerLab/bonner-libraries.git@main#egg=bonner-libraries",
+]
+version = "0.1.0"
+# FIXME(dynamic version): https://github.com/astral-sh/uv/issues/8714
+# https://github.com/astral-sh/uv/issues/11718
+# https://github.com/astral-sh/uv/issues/14037
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pytest",
+    "sphinx",
+    "jupytext",
+    "line-profiler",
+    "memory-profiler",
+    "snakeviz",
+]
+
+[project.optional-dependencies]
+cpu = ["torch", "torchvision", "jax"]
+cu126 = ["torch", "torchvision", "jax[cuda12]"]
+cu128 = ["torch", "torchvision", "jax[cuda12]"]
+cu129 = ["torch", "torchvision", "jax[cuda12]"]
+rocm = ["torch", "torchvision", "pytorch-triton-rocm", "jax[rocm]"]
+xpu = ["torch", "torchvision", "pytorch-triton-xpu", "jax"]
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+conflicts = [
+    [
+        { extra = "cpu" },
+        { extra = "cu126" },
+        { extra = "cu128" },
+        { extra = "cu129" },
+        { extra = "rocm" },
+        { extra = "xpu" },
+    ],
+]
+
+[tool.uv.build-backend]
+module-name = "lib"
+
+[tool.uv.sources]
+bonner-libraries = { path = "../../libraries/bonner-libraries", editable = true }
+torch = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu126", extra = "cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-cu128", extra = "cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-cu129", extra = "cu129", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-xpu", extra = "xpu", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu126", extra = "cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-cu128", extra = "cu128", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-cu129", extra = "cu129", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-xpu", extra = "xpu", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+pytorch-triton-rocm = [{ index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" }]
+pytorch-triton-xpu = [{ index = "pytorch-xpu", extra = "xpu", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm6.4"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-xpu"
+url = "https://download.pytorch.org/whl/xpu"
+explicit = true

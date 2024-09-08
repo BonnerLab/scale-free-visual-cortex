@@ -1,0 +1,17 @@
+target-version = "py313"
+preview = true
+extend-include = ["*.ipynb"]
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "CPY001",
+    "PD013",
+    "D103",
+    "E302",
+    "PLR0913",
+    "D203",
+    "D212",
+    "PD013",
+    "PD010",
+]

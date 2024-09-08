@@ -1,0 +1,7 @@
+from: markdown
+to: latex
+cite-method: biblatex
+template: ./template.tex
+filters:
+  - pandoc-crossref
+wrap: none

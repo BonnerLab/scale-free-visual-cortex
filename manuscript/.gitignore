@@ -10,5 +10,5 @@
 *.out
 !cache
 
-arxiv
+/arxiv/
 /.quarto/

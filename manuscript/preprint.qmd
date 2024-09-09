@@ -68,7 +68,7 @@ abstract: |
   How does the human visual cortex encode sensory information? To address this question, we explore the covariance structure of neural representations. We perform a cross-decomposition analysis of fMRI responses to natural images in multiple individuals from the Natural Scenes Dataset and find that neural representations systematically exhibit a power-law covariance spectrum over four orders of magnitude in ranks. This scale-free structure is found in multiple regions along the visual hierarchy, pointing to the existence of a generic encoding strategy in visual cortex. We also show that, up to a rotation, a large ensemble of principal axes of these population codes are shared across subjects, showing the existence of a universal high-dimensional representation. This suggests a high level of convergence in how the human brain learns to represent natural scenes despite individual differences in neuroanatomy and experience. We further demonstrate that a spectral approach is critical for characterizing population codes in their full extent, and in doing so, we reveal a vast space of uncharted dimensions that have been out of reach for conventional variance-weighted methods. A global view of neural representations thus requires embracing their high-dimensional nature and understanding them statistically rather than through visual or semantic interpretation of individual dimensions.
 keywords: ["scale-free", "power-law", "universality", "high-dimensional representations", "dimensionality", "visual cortex", "fMRI", "natural scenes"]
 significance: |
-  # TODO
+  The visual world is incredibly complex, but the neural representations underlying our visual processing abilities are often found to be remarkably compact. Using a large-scale human fMRI dataset, we probe the complexity of visual cortex responses to thousands of natural scenes and discover a surprising statistical signature that reveals the previously hidden richness and expressivity of cortical representations. Specifically, we find that neural covariance spectra exhibit a scale-free power-law structure throughout the visual cortex --- cortical responses cannot be effectively compressed onto a small handful of dimensions. Intriguingly, we also demonstrate that this high-dimensional structure is shared between individuals. Together, our results provide evidence for a universal high-dimensional neural population code for human vision.
 bibliography: references.bib
 funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
 license: CC BY-SA
@@ -311,7 +311,7 @@ All code for these analyses are available at [this git repository](https://githu
 
 # Acknowledgments
 
-This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics. The authors would like to thank Leyla Isik, Daeyeol Lee, Nikolaus Kriegeskorte, and Kelsey Han for their valuable comments on the manuscript.
+This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
 
 {{< pagebreak >}}
 

@@ -7,7 +7,7 @@ author:
     id: RMG
     email: rgautha1@jh.edu
     orcid: 0000-0001-7121-1532
-    roles: ["conceptualization", "data curation", "analysis", "investigation", "methodology", "software", "visualization", "writing", "editing"]
+    roles: ["analysis", "investigation", "methodology", "software", "visualization", "validation", "writing"]
     corresponding: true
     affiliation:
       - ref: a
@@ -17,7 +17,7 @@ author:
     id: BM
     email: menard@jh.edu
     orcid: 0000-0003-3164-6974
-    roles: ["conceptualization", "funding", "methodology", "project administration", "supervision", "writing", "editing"]
+    roles: ["conceptualization", "funding", "methodology", "supervision", "editing"]
     corresponding: true
     affiliation:
       - ref: b
@@ -30,7 +30,7 @@ author:
     id: MFB
     email: mfbonner@jh.edu
     orcid: 0000-0002-4992-674X
-    roles: ["conceptualization", "funding", "methodology", "project administration", "supervision", "writing", "editing"]
+    roles: ["conceptualization", "funding", "methodology", "project administration", "supervision", "editing"]
     corresponding: true
     affiliation:
     - ref: a

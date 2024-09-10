@@ -68,6 +68,7 @@ abstract: |
   How does the human visual cortex encode sensory information? To address this question, we explore the covariance structure of neural representations. We perform a cross-decomposition analysis of fMRI responses to natural images in multiple individuals from the Natural Scenes Dataset and find that neural representations systematically exhibit a power-law covariance spectrum over four orders of magnitude in ranks. This scale-free structure is found in multiple regions along the visual hierarchy, pointing to the existence of a generic encoding strategy in visual cortex. We also show that, up to a rotation, a large ensemble of principal axes of these population codes are shared across subjects, showing the existence of a universal high-dimensional representation. This suggests a high level of convergence in how the human brain learns to represent natural scenes despite individual differences in neuroanatomy and experience. We further demonstrate that a spectral approach is critical for characterizing population codes in their full extent, and in doing so, we reveal a vast space of uncharted dimensions that have been out of reach for conventional variance-weighted methods. A global view of neural representations thus requires embracing their high-dimensional nature and understanding them statistically rather than through visual or semantic interpretation of individual dimensions.
 keywords: ["scale-free", "power-law", "universality", "high-dimensional representations", "dimensionality", "visual cortex", "fMRI", "natural scenes"]
 significance: |
+  # TODO(Raj): update once Mick and Brice have gone through it on Overleaf
   The visual world is incredibly complex, but the neural representations underlying our visual processing abilities are often found to be remarkably compact. Using a large-scale human fMRI dataset, we probe the complexity of visual cortex responses to thousands of natural scenes and discover a surprising statistical signature that reveals the previously hidden richness and expressivity of cortical representations. Specifically, we find that neural covariance spectra exhibit a scale-free power-law structure throughout the visual cortex --- cortical responses cannot be effectively compressed onto a small handful of dimensions. Intriguingly, we also demonstrate that this high-dimensional structure is shared between individuals. Together, our results provide evidence for a universal high-dimensional neural population code for human vision.
 bibliography: references.bib
 funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
@@ -250,16 +251,16 @@ $$
 and evaluate the reliable variance along each latent dimension by projecting the test data onto the singular vectors $U_\text{train}$ and $V_\text{train}$
 
 $$
-\Sigma_{k}(X_1, X_2) = \operatorname{cov}
+\Sigma(X_1, X_2) = \operatorname{cov}
 \left(X_{\text{1,test}}\,U_\text{train}, X_{\text{2,test}}\,V_\text{train} \right) / d_X
 $$
 
 where the normalization by $d_X$ (number of voxels) enables meaningful comparisons between representations with different numbers of channels (see @fig-vary-n-voxels for more detail). All the data are centered using the mean of the training sets.
 
-When the train and test samples are drawn from the same distribution, the covariance matrix $\Sigma_{k}$ is diagonal in expectation. In practice,  under normal circumstances, $\Sigma_{k}$ is quasi-diagonal and we have verified that the contribution from off-diagonal terms is negligible. We thus estimate the cross-validated spectrum as
+When the train and test samples are drawn from the same distribution, the covariance matrix $\Sigma$ is diagonal in expectation. In practice,  under normal circumstances, $\Sigma$ is quasi-diagonal and we have verified that the contribution from off-diagonal terms is negligible. We thus estimate the cross-validated spectrum as
 
 $$
-\hat{\Sigma}_k(X, X) = \mathrm{diagonal~of~}\Sigma_{k}(X_1, X_2)\;.
+\hat{\Sigma}_k(X, X) = \mathrm{diagonal~of~}\Sigma(X_1, X_2)\;.
 $$
 
 ### Cross-validation scheme
@@ -281,7 +282,7 @@ $$
 and evaluate the covariance that generalizes to held-out stimuli by projecting the test sets onto the singular vectors $U_\text{train}$ and $V_\text{train}$
 
 $$
-\hat{\Sigma}(X_i,Y_j) = \mathrm{diagonal~of~} \operatorname{cov}
+\hat{\Sigma}_k(X_i,Y_j) = \mathrm{diagonal~of~} \operatorname{cov}
 \left(X_{i, \text{test}}\, U_\text{train} , Y_{j, \text{test}}\, V_\text{train} \right) / \sqrt{d_X d_Y}
 $$
 
@@ -290,12 +291,12 @@ where the normalization by the geometric mean of the number of voxels $d_X$ and 
 Since the ordering of trials is arbitrary, we make the estimated spectrum symmetric by averaging the spectra for two pairs of trials: (i) $X_1$ and $Y_2$ and (ii) $X_2$ and $Y_1$, making our final estimate of the spectrum
 
 $$
-\hat{\Sigma}(X,Y) = \frac{1}{2}\left[\hat{\Sigma}(X_1,Y_2) + \hat{\Sigma}(X_2,Y_1)\right]\;.
+\hat{\Sigma}_k(X,Y) = \frac{1}{2}\left[\hat{\Sigma}_k(X_1,Y_2) + \hat{\Sigma}_k(X_2,Y_1)\right]\;.
 $$
 
 Similar to our procedure for the within-subject spectra, we divide the stimuli into 8 folds and estimate cross-validated binned spectra.
 
-Note that for all of these spectral analyses, the test singular values $\hat{\Sigma}(X, X)$ and $\hat{\Sigma}(X, Y)$ are not guaranteed to be positive, unlike a typical singular value spectrum. In fact, if the two systems share no reliable covariance that generalizes from the training set to the test set along a particular singular vector, the expected value of the corresponding test singular value is $0$. We make use of this property to perform the null test shown in the inset of @fig-significance-test.
+Note that for all of these spectral analyses, the test singular values $\hat{\Sigma}_k(X, X)$ and $\hat{\Sigma}_k(X, Y)$ are not guaranteed to be positive, unlike a typical singular value spectrum. In fact, if the two systems share no reliable covariance that generalizes from the training set to the test set along a particular singular vector, the expected value of the corresponding test singular value is $0$. We make use of this property to perform the null test shown in the inset of @fig-significance-test.
 
 ### Functional vs anatomical alignment
 In the lower panels of @fig-general, we refer to the between-subject spectra described above as *functionally* aligned spectra since they are computed by decomposing a cross-covariance matrix that assumes no anatomical alignment between the voxels across individuals. If we assume that different subjects' cortical surfaces are in fact anatomically aligned, i.e. the voxels at the same location in different subjects have identical tuning properties, we would expect that the latent dimensions from one participant should generalize to another. Specifically, we would expect that the rotation matrices $U_\text{train}$ and $V_\text{train}$ corresponding to the first and second subjects respectively could be swapped without losing any information when estimating cross-validated covariance on the test data.

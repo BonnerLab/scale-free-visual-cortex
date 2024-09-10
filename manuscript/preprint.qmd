@@ -70,6 +70,8 @@ keywords: ["scale-free", "power-law", "universality", "high-dimensional represen
 significance: |
   # TODO(Raj): update once Mick and Brice have gone through it on Overleaf
   The visual world is incredibly complex, but the neural representations underlying our visual processing abilities are often found to be remarkably compact. Using a large-scale human fMRI dataset, we probe the complexity of visual cortex responses to thousands of natural scenes and discover a surprising statistical signature that reveals the previously hidden richness and expressivity of cortical representations. Specifically, we find that neural covariance spectra exhibit a scale-free power-law structure throughout the visual cortex --- cortical responses cannot be effectively compressed onto a small handful of dimensions. Intriguingly, we also demonstrate that this high-dimensional structure is shared between individuals. Together, our results provide evidence for a universal high-dimensional neural population code for human vision.
+authorship-contribution: |
+  CRediT authorship statement: RMG: Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing~\textendash~original draft; BM: Conceptualization, Methodology, Supervision, Writing~\textendash~review \& editing, Funding acquisition; MFB: Conceptualization, Methodology, Supervision, Writing~\textendash~review \& editing, Project administration, Funding acquisition
 bibliography: references.bib
 funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
 license: CC BY-SA

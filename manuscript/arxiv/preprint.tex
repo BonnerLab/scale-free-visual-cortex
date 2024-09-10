@@ -937,7 +937,7 @@ projecting the test data onto the singular vectors \(U_\text{train}\)
 and \(V_\text{train}\)
 
 \[
-\Sigma_{k}(X_1, X_2) = \operatorname{cov}
+\Sigma(X_1, X_2) = \operatorname{cov}
 \left(X_{\text{1,test}}\,U_\text{train}, X_{\text{2,test}}\,V_\text{train} \right) / d_X
 \]
 
@@ -947,13 +947,13 @@ comparisons between representations with different numbers of channels
 centered using the mean of the training sets.
 
 When the train and test samples are drawn from the same distribution,
-the covariance matrix \(\Sigma_{k}\) is diagonal in expectation. In
-practice, under normal circumstances, \(\Sigma_{k}\) is quasi-diagonal
-and we have verified that the contribution from off-diagonal terms is
+the covariance matrix \(\Sigma\) is diagonal in expectation. In
+practice, under normal circumstances, \(\Sigma\) is quasi-diagonal and
+we have verified that the contribution from off-diagonal terms is
 negligible. We thus estimate the cross-validated spectrum as
 
 \[
-\hat{\Sigma}_k(X, X) = \mathrm{diagonal~of~}\Sigma_{k}(X_1, X_2)\;.
+\hat{\Sigma}_k(X, X) = \mathrm{diagonal~of~}\Sigma(X_1, X_2)\;.
 \]
 
 \subsubsection{Cross-validation scheme}\label{cross-validation-scheme}
@@ -990,7 +990,7 @@ projecting the test sets onto the singular vectors \(U_\text{train}\)
 and \(V_\text{train}\)
 
 \[
-\hat{\Sigma}(X_i,Y_j) = \mathrm{diagonal~of~} \operatorname{cov}
+\hat{\Sigma}_k(X_i,Y_j) = \mathrm{diagonal~of~} \operatorname{cov}
 \left(X_{i, \text{test}}\, U_\text{train} , Y_{j, \text{test}}\, V_\text{train} \right) / \sqrt{d_X d_Y}
 \]
 
@@ -1004,16 +1004,16 @@ spectrum symmetric by averaging the spectra for two pairs of trials: (i)
 estimate of the spectrum
 
 \[
-\hat{\Sigma}(X,Y) = \frac{1}{2}\left[\hat{\Sigma}(X_1,Y_2) + \hat{\Sigma}(X_2,Y_1)\right]\;.
+\hat{\Sigma}_k(X,Y) = \frac{1}{2}\left[\hat{\Sigma}_k(X_1,Y_2) + \hat{\Sigma}_k(X_2,Y_1)\right]\;.
 \]
 
 Similar to our procedure for the within-subject spectra, we divide the
 stimuli into 8 folds and estimate cross-validated binned spectra.
 
 Note that for all of these spectral analyses, the test singular values
-\(\hat{\Sigma}(X, X)\) and \(\hat{\Sigma}(X, Y)\) are not guaranteed to
-be positive, unlike a typical singular value spectrum. In fact, if the
-two systems share no reliable covariance that generalizes from the
+\(\hat{\Sigma}_k(X, X)\) and \(\hat{\Sigma}_k(X, Y)\) are not guaranteed
+to be positive, unlike a typical singular value spectrum. In fact, if
+the two systems share no reliable covariance that generalizes from the
 training set to the test set along a particular singular vector, the
 expected value of the corresponding test singular value is \(0\). We
 make use of this property to perform the null test shown in the inset of

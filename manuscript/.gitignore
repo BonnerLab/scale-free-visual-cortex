@@ -10,5 +10,4 @@
 *.out
 !cache
 
-/arxiv/
 /.quarto/

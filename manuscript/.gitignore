@@ -4,10 +4,10 @@
 *.fls
 *.log
 *.run.xml
-*.bbl
 *.blg
 *.synctex.gz
 *.out
+*.tar.gz
 !cache
 
 /.quarto/

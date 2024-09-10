@@ -1,8 +1,6 @@
 project:
   type: manuscript
   output-dir: arxiv
-  post-render:
-    - clean.sh
 
 manuscript:
   article: preprint.qmd
@@ -24,4 +22,3 @@ pdf-engine: pdflatex
 format:
   arxiv-pdf:
     keep-tex: true
-  # html: default

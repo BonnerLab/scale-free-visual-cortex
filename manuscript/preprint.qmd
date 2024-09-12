@@ -15,7 +15,7 @@ author:
       given: Brice
       family: Ménard
     id: BM
-    email: menard@jh.edu
+    email: bmenard1@jh.edu
     orcid: 0000-0003-3164-6974
     roles: ["conceptualization", "funding", "methodology", "supervision", "editing"]
     corresponding: true

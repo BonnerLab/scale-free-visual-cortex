@@ -72,7 +72,7 @@ significance: |
 authorship-contribution: |
   CRediT authorship statement: RMG: Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing~\textendash~original draft; BM: Conceptualization, Methodology, Supervision, Writing~\textendash~review \& editing, Funding acquisition; MFB: Conceptualization, Methodology, Supervision, Writing~\textendash~review \& editing, Project administration, Funding acquisition
 bibliography: references.bib
-funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.
+funding: This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics (KITP).
 license: CC BY-SA
 declaration: The authors declare no competing interests.
 ---

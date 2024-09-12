@@ -1,6 +1,6 @@
 # Universal scale-free representations in human visual cortex
 
-This repository contains code required to reproduce the experimental results published at <>.
+This repository contains code required to reproduce the experimental results published as [a preprint on arXiv](https://arxiv.org/abs/2409.06843v1).
 
 ## System requirements
 

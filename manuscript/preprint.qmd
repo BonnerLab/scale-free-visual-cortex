@@ -315,6 +315,10 @@ The dataset analysed in this study is the publicly available Natural Scenes Data
 
 All code for these analyses are available at [this git repository](https://github.com/BonnerLab/scale-free-visual-cortex).
 
+# Authorship contribution
+
+[CRediT statement](https://credit.niso.org/) --- RMG: Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing -- original draft; BM, MFB: Conceptualization, Methodology, Supervision, Writing -- review \& editing, Project administration, Funding acquisition
+
 # Acknowledgments
 
 This research was supported in part by a Johns Hopkins Catalyst Award to MFB, Institute for Data Intensive Engineering and Science Seed Funding to MFB and BM, and grant NSF PHY-2309135 to the Kavli Institute for Theoretical Physics.

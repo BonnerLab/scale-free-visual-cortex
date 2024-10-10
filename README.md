@@ -4,6 +4,8 @@ This repository contains code required to reproduce the experimental results pub
 
 ## System requirements
 
+### Hardware
+
 These analyses were run on a workstation with
 
 - Processor: [13th Gen Intel(R) Core(TM) i9-13900K](https://www.intel.com/content/www/us/en/products/sku/230496/intel-core-i913900k-processor-36m-cache-up-to-5-80-ghz/specifications.html)
@@ -23,9 +25,13 @@ If you plan to reproduce these results, I'd recommend using a machine with
 > [!TIP]
 > Throughout the code, there are `batch_size` parameters that control the amount of GPU memory used. You might want to adjust this especially if you run permutation tests or bootstrap resampling when computing covariance spectra.
 
-## Installation
+### Software
 
 The code has been tested on RHEL 9.3. Any standard Linux distribution should work.
+
+We use Python 3.12.4 for all analyses; the other required Python dependencies are described in `requirements.txt`. Do not attempt to install them directly; follow the installation guide below.
+
+## Installation (~5 min)
 
 1. Clone this repository.
 
@@ -46,12 +52,16 @@ git clone https://github.com/BonnerLab/scale-free-visual-cortex.git
         - Install Python 3.12.4
         - Create a virtual environment (`python -m venv <path-to-venv>`)
         - Activate your virtual environment (e.g. `<path-to-venv>/bin/activate` if you're using `bash`)
-        - Install the required packages (`pip install -r requirements.frozen.txt`)
+        - Install the required packages (`pip install -r requirements.txt`)
+
+## Demo (~5 min)
+
+We provide a simple high-level overview of the analysis in `demo.ipynb` using a small subset of the data. After installing this package, simply run the notebook file: this will automatically download ~300 MB of data and run the within- and between-subject analyses for one pair of subjects.
 
 ## Reproducing the analyses
 
 > [!IMPORTANT]
-> You will need [access to the Natural Scenes Dataset](https://docs.google.com/forms/d/e/1FAIpQLSduTPeZo54uEMKD-ihXmRhx0hBDdLHNsVyeo_kCb8qbyAkXuQ/viewform) to reproduce the analyses in the paper.
+> You will need [access to the Natural Scenes Dataset](https://docs.google.com/forms/d/e/1FAIpQLSduTPeZo54uEMKD-ihXmRhx0hBDdLHNsVyeo_kCb8qbyAkXuQ/viewform) to reproduce the analyses in the paper. Specifically, you will need to obtain an AWS credentials file and set the `AWS_SHARED_CREDENTIALS_FILE` environment variable (see Step 2 of Installation).
 
 `manuscript/notebooks` contains Jupyter notebooks that generate the figures in the paper.
 
